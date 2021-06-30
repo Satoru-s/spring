@@ -3,6 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!-- 	<bean id="userDao" class="spring.dao.impl.UserDaoImpl"></bean> -->
-	<bean id="userDao" class="spring.fatory.StaticFactory" factory-method="getUserDao"></bean>
-
+	<!-- <bean id="userDao" class="spring.fatory.StaticFactory" factory-method="getUserDao"></bean> -->
+	<bean id="userDao" class="spring.dao.impl.UserDaoImpl"></bean>
+	<bean id="userService" class="spring.service.impl.UserServiceImpl">
+		<property name="userDao" ref ="userDao"></property>
+	</bean>
 </beans>
