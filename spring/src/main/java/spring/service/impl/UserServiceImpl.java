@@ -13,10 +13,18 @@ public class UserServiceImpl implements UserService{
 	public UserDao getUserDao() {
 		return userDao;
 	}
-
-	public void setUserDao(UserDao userDao) {
+	
+	public UserServiceImpl(UserDao userDao) {
+		super();
 		this.userDao = userDao;
 	}
+	public UserServiceImpl() {
+		
+	}
+
+//	public void setUserDao(UserDao userDao) {
+//		this.userDao = userDao;
+//	}
 
 	public void save() {
 		userDao.save();
